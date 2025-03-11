@@ -1,7 +1,7 @@
 import tweepy
 from airtable import Airtable
 from datetime import datetime, timedelta
-from langchain.chat_models import ChatOpenAI
+from langchain_groq import ChatGroq
 from langchain.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
 import schedule
 import time
@@ -39,8 +39,7 @@ class TwitterBot:
         self.tweet_response_limit = 35 
 
         
-        self.llm = ChatOpenAI(temperature=.5, openai_api_key=GROQ_API_KEY, model_name='gpt-4')
-
+        self.llm = ChatGroq(groq_api_key=GROQ_API_KEY, model_name="Gemma2-9b-It")
         
         self.mentions_found = 0
         self.mentions_replied = 0
