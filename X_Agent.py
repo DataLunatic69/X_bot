@@ -22,7 +22,7 @@ AIRTABLE_API_KEY = os.getenv("AIRTABLE_API_KEY", "YourKey")
 AIRTABLE_BASE_KEY = os.getenv("AIRTABLE_BASE_KEY", "YourKey")
 AIRTABLE_TABLE_NAME = os.getenv("AIRTABLE_TABLE_NAME", "YourKey")
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "YourKey")
+GROQ_API_KEY = os.getenv("OPENAI_API_KEY", "YourKey")
 
 
 class TwitterBot:
@@ -39,7 +39,7 @@ class TwitterBot:
         self.tweet_response_limit = 35 
 
         
-        self.llm = ChatOpenAI(temperature=.5, openai_api_key=OPENAI_API_KEY, model_name='gpt-4')
+        self.llm = ChatOpenAI(temperature=.5, openai_api_key=GROQ_API_KEY, model_name='gpt-4')
 
         
         self.mentions_found = 0
